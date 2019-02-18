@@ -56,7 +56,7 @@ router.get("/login", (req, res, next) => {
 
 router.post(
   "/login",
-  passport.authenticate("local"), isActive("Active"), ()=>{
+  passport.authenticate("local"), isActive("Active"), (req,res,next)=>{
     //Redireccionar a perfil
     res.send('Estas activo')
   }
