@@ -9,10 +9,12 @@ router.post('/addsponsor/:id', (req, res, next)=>{
   console.log(req.params)
   const {id} = req.params
   const padrinos = req.body.gestionpadrinos
+
+  console.log('duv')
   console.log(padrinos)
   Child.findByIdAndUpdate(id,{$set:req.body}, {new:true})
   .then(() => {
-    res.redirect("/children");
+    res.send('updated');
   })
   .catch(error => {
     res.render("/", { error });

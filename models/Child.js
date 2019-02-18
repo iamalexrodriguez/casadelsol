@@ -16,7 +16,7 @@ let childSchema = new Schema({
       ref: "Comment"
     },
   ],
-  children:[
+  sponsors:[
     {
       type: Schema.Types.ObjectId,
       ref: 'User'
