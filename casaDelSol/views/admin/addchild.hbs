@@ -1,0 +1,20 @@
+  <div id="panel">
+    <h2>Agrega un niño a la base de datos</h2>
+    <form action="/children/create" method="POST" enctype="multipart/form-data">
+      <p>Nombre completo del niño:</p>
+      <input type="text" name="name">
+      <br>
+      <p>Foto de perfil:</p>
+      <input type="file" name="profilePic" required="true">
+      <br>
+      <p>Biografía:</p>
+      <textarea name="bio"cols="30" rows="10"></textarea>
+      <br>
+      <p>Intereses:</p>
+      <textarea name="interests"cols="30" rows="5"></textarea>
+      <br>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
