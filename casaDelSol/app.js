@@ -9,9 +9,12 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 
-const session    = require("express-session");
-const MongoStore = require('connect-mongo')(session);
-const flash      = require("connect-flash");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
+const passport = require("./passport/localStrategy");
+
+const { isRole } = require("../casaDelSol/helpers/middlewares");
 
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
@@ -79,9 +82,8 @@ app.use(flash());
 require("./passport")(app);
 
 //initialize passport
-//app.use(passport.initialize());
-//app.use(passport.session());
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Validate logged user
 function isLogged(req, res, next) {
@@ -94,8 +96,10 @@ function isLogged(req, res, next) {
   }
 }
 
+const children = require("./routes/children");
 const index = require("./routes/index");
 const auth = require("./routes/auth");
+app.use("/children", isLogged, children);
 app.use("/auth", isLogged, auth);
 app.use("/", isLogged, index);
 

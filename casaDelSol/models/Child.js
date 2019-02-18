@@ -9,10 +9,13 @@ let childSchema = new Schema({
   profilePic: String,
   pictureGallery: [],
   bio: String,
-  comments: {
+  interests: String,
+  comments: [
+  {
     type: Schema.Types.ObjectId,
     ref: "Comment"
-  }
+  },
+  ],
 },{
   timestamps: true,
   versionKey: false,
