@@ -12,12 +12,13 @@ router.post('/addsponsor/:id', (req, res, next)=>{
 
   console.log('duv')
   console.log(padrinos)
-  Child.findByIdAndUpdate(id,{$set:req.body}, {new:true})
+  Child.findByIdAndUpdate(id,{$push:{sponsors:padrinos}}, {new:true})
   .then(() => {
-    res.send('updated');
+    res.redirect(`/children/detail/${id}`)
   })
   .catch(error => {
-    res.render("/", { error });
+    console.log(error)
+    es.render("/", { error });
   });
 
 })
@@ -29,7 +30,6 @@ router.get('/sponsors/:id', (req,res,next)=>{
   User.find()
   .then((u)=>{
     users = u
-    console.log(u)
     return Child.findById(id) 
   }) 
   .then(child=>{
@@ -40,6 +40,18 @@ router.get('/sponsors/:id', (req,res,next)=>{
   })
 
 })
+
+//Backup
+// router.get('/detail/:id', (req,res,next)=>{
+//   const{id} = req.params
+//   Child.findById(id)
+//     .then((child)=>{
+//       res.render('admin/detailchild', child)
+//     })
+//     .catch(error=>{
+//       res.render('admin/detailchild', {error})
+//     })
+// })
 
 router.get('/detail/:id', (req,res,next)=>{
   const{id} = req.params
