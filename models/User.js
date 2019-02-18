@@ -38,13 +38,7 @@ const userSchema = new Schema(
         "HOSPEDAJE",
         "COMPLETO"
       ]
-    },
-    children: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Child"
-      }
-    ]
+    }
   },
   { timestamps: true, versionKey: false }
 );

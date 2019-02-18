@@ -2,15 +2,22 @@
 
 <a href="/children/create">Agregar pequeñin</a>
 
+
+
+<div class="body container">
+
+
 {{#each children as |child|}}
+<div class="childCard">
+
 <h2>{{child.name}}</h2>
 <img src="{{child.profilePic}}" alt="photo">
-<p><b>Bio:</b></p>
-<p>{{child.bio}}</p>
-<p><b>Intereses:</b></p>
-<p>{{child.interests}}</p>
-<a href="/children/delete/{{this._id}}">Dar de baja</a>
+
+ <a href="/children/detail/{{this._id}}"> <p>Ver detalle</p> </a>
+
+</div>
 {{else}}
   <h2>Aún no hay niños.</h2>
 {{/each}}
 
+</div>
