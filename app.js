@@ -14,7 +14,7 @@ const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 const passport = require("./passport/localStrategy");
 
-// const { isRole } = require("../casaDelSol/helpers/middlewares");
+const { isRole } = require("./helpers/middlewares");
 
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
