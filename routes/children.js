@@ -55,6 +55,7 @@ router.get('/sponsors/:id', (req,res,next)=>{
 
 router.get('/detail/:id', (req,res,next)=>{
   const{id} = req.params
+  
   Child.findById(id)
     .then((child)=>{
       res.render('admin/detailchild', child)
