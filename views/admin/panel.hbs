@@ -18,6 +18,11 @@
       </div>
     </div>
   </div>
+<div class="childCard">
+<h2>{{child.name}}</h2>
+<img src="{{child.profilePic}}" alt="photo">
+ <a href="/children/detail/{{this._id}}"> <p>Ver detalle</p> </a>
+</div>
 {{else}}
   <h2>Aún no hay niños.</h2>
 {{/each}}
