@@ -1,0 +1,16 @@
+<h2>Hola, administrador!</h2>
+
+<a href="/children/create">Agregar pequeñin</a>
+
+{{#each children as |child|}}
+<h2>{{child.name}}</h2>
+<img src="{{child.profilePic}}" alt="photo">
+<p><b>Bio:</b></p>
+<p>{{child.bio}}</p>
+<p><b>Intereses:</b></p>
+<p>{{child.interests}}</p>
+<a href="/children/delete/{{this._id}}">Dar de baja</a>
+{{else}}
+  <h2>Aún no hay niños.</h2>
+{{/each}}
+
