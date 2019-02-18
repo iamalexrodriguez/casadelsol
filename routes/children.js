@@ -5,8 +5,13 @@ const uploadCloud = require("../helpers/cloudinary");
 
 
 //hay que agregar auth
-router.post('/addsponsor', (req, res, next)=>{
-  console.log(req.body)
+router.post('/addsponsor/:id', (req, res, next)=>{
+  console.log(req.params)
+  const {id} = req.params
+  const padrinos = req.body.gestionpadrinos
+  console.log(padrinos)
+  Child.findByIdAndUpdate(id,{$set:req.body}, {new:true})
+      //pending functionality
   res.send('llega')
 })
 

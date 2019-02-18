@@ -1,6 +1,6 @@
 <h3>Agrega padrinos a: {{child.name}}</h3>
 
-<form action="/children/addsponsor" method="POST">
+<form action="/children/addsponsor/{{child._id}}" method="POST">
 <select size="{{users.length}}" name="gestionpadrinos" multiple="yes">
   {{#each users}}
   <option value="{{this._id}}">{{this.username}}</option>

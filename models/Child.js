@@ -11,12 +11,18 @@ let childSchema = new Schema({
   bio: String,
   interests: String,
   comments: [
-  {
-    type: Schema.Types.ObjectId,
-    ref: "Comment"
-  },
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Comment"
+    },
   ],
-},{
+  children:[
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  ],},
+{
   timestamps: true,
   versionKey: false,
 });
