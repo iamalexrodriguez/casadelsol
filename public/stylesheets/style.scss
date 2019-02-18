@@ -3,6 +3,27 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content:flex-start;
+  flex-direction: row;
+  flex-flow: wrap;
+
+}
+
+.childCard{
+  align-items:center;
+  justify-content: center;
+  width:33%;
+}
+
+.childCard img{
+  width: 300px;
+}
+
 a {
   color: #00B7FF;
 }
