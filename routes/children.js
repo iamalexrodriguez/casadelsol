@@ -41,21 +41,12 @@ router.get('/sponsors/:id', (req,res,next)=>{
 
 })
 
-//Backup
-// router.get('/detail/:id', (req,res,next)=>{
-//   const{id} = req.params
-//   Child.findById(id)
-//     .then((child)=>{
-//       res.render('admin/detailchild', child)
-//     })
-//     .catch(error=>{
-//       res.render('admin/detailchild', {error})
-//     })
-// })
-
 router.get('/detail/:id', (req,res,next)=>{
   const{id} = req.params
-  
+  const user = req.body
+
+
+  User.findById()
   Child.findById(id)
     .then((child)=>{
       res.render('admin/detailchild', child)
