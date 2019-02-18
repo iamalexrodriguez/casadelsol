@@ -1,8 +1,22 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  //font-family: 'Indie Flower', cursive;
+  font-family: 'Luckiest Guy', cursive;
 }
 
+a {
+  color: #00B7FF;
+}
+
+.nav-wrapper{
+  color: #ffb74d orange lighten-2;
+
+}
+
+.prueba {
+  color: black;
+}
 
 .container{
   display: flex;
@@ -22,8 +36,4 @@ body {
 
 .childCard img{
   width: 300px;
-}
-
-a {
-  color: #00B7FF;
 }
