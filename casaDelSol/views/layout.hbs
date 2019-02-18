@@ -6,27 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  <!-- Materializecss -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Luckiest+Guy" rel="stylesheet">
 </head>
 <body>
 
-<nav id="mainNav">
+<!-- Navbar goes here -->
+<div class="navbar-fixed">
+<nav>
   {{#if loggedUser}}
-  <span>LOGO</span>
-  <span>
-    <a href="/">Home</a>
-    <a href="/profile"></a>
-    <a href="/auth/logout">Logout</a>
-  </span>
+  <div class="nav-wrapper orange lighten-1">
+    <img src="/public/images/Logo-Casa-del-Sol-jpg.jpg">
+    <a href="/" class="brand-logo"></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/profile"></a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+    </ul>
+  </div>
   {{else}}
-  <span>LOGO</span>
-  <span>
-    <a href="/">Home</a>
-    <a href="/auth/signup">Signup</a>
-    <a href="/auth/login">Login</a>
+  <div class="nav-wrapper orange lighten-1">
+    <img src="/public/images/Logo-Casa-del-Sol-jpg.jpg">
     
-  </span>
-{{/if}}
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+    </ul>
+  </div>
+  {{/if}}
 </nav>
+</div>
 
 
   {{{body}}}
