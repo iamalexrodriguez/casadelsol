@@ -8,9 +8,6 @@ router.post("/addsponsor/:id", (req, res, next) => {
   console.log(req.params);
   const { id } = req.params;
   const padrinos = req.body.gestionpadrinos;
-
-  console.log("duv");
-  console.log(padrinos);
   Child.findByIdAndUpdate(id, { $push: { sponsors: padrinos } }, { new: true })
     .then(() => {
       res.redirect(`/children/detail/${id}`);
@@ -78,8 +75,6 @@ router.get("/create", (req, res, next) => {
 router.post("/create", uploadCloud.single("profilePic"), (req, res, next) => {
   Child.create({ ...req.body, profilePic: req.file.url })
     .then(
-      //Aqui podria ir agregar la relacion a padrino?
-      //Como relaciono algo que este fuera de
       res.redirect("/children")
     )
     .catch(error => {

@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const router = express.Router();
 const User = require("../models/User");
+const Child = require("../models/Child");
 let { sendActivationMail } = require("../helpers/mailer");
 const { isActive } = require("../helpers/middlewares");
 const { isRole } = require("../helpers/middlewares");
@@ -21,6 +22,10 @@ function isLoggedIn(req, res, next) {
   }
 }
 
+function isAdmin(req, res, next) {
+  if (req.user.role === "ADMIN") res.redirect("/children");
+  else res.redirect("/");
+}
 //Create confirmation code
 function generateCode() {
   const characters =
@@ -56,9 +61,21 @@ router.get("/login", (req, res, next) => {
 
 router.post(
   "/login",
-  passport.authenticate("local"), isActive("Active"), (req,res,next)=>{
-    //Redireccionar a perfil
-    res.send('Estas activo')
+  passport.authenticate("local"),
+  isActive("Active"),
+  (req, res, next) => {
+    if (req.user.role === "ADMIN") return res.redirect("/children");
+    const email = req.body.email;
+    Promise.all([
+      User.findOne({ email: email }),
+      Child.find({ sponsors: req.user._id })
+    ])
+      .then(r => {
+        //r[1].sponsors
+        console.log(r[1]);
+        res.render("user/profile", { user: r[0], children: r[1] });
+      })
+      .catch(e => next(e));
   }
 );
 

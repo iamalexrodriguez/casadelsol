@@ -1,0 +1,10 @@
+<h3>Bienvenido a tu perfil, {{user.username}}</h3>
+
+<h4>Tus ahijados:</h4>
+
+{{#each children as |child|}}
+<img width='300'  src="{{child.profilePic}}" alt="">
+<p>{{child.name}}</p>
+{{else}}
+ <h2>Aún no tienes ahijados registrados a tu nombre.</h2>
+{{/each}}

@@ -99,7 +99,7 @@ function isLogged(req, res, next) {
 const children = require("./routes/children");
 const index = require("./routes/index");
 const auth = require("./routes/auth");
-app.use("/children", isLogged, children);
+app.use("/children", isLogged, isRole('ADMIN'), children);
 app.use("/auth", isLogged, auth);
 app.use("/", isLogged, index);
 
