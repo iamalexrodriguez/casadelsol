@@ -1,3 +1,4 @@
+<!--
 <h2>Signup</h2>
 
 <div class="row">
@@ -5,23 +6,23 @@
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <!-- name/user -->
+            <!-- name/user 
             <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">First Name</label>
+              <input id="username" type="text" class="validate">
+              <label for="username">Nombre</label>
             </div>
-            <!-- email -->
+            <!-- email 
             <div class="input-field col s6">
               <i class="material-icons prefix">mail</i>
               <input id="email" type="email" class="validate">
-              <label for="email_inline">Email</label>
+              <label for="email">Email</label>
             </div>
           </div>
         </form>
       </div>
 
-<!-- constraseñas -->
+<!-- constraseñas 
       
       <div class="row">
         <form class="col s12">
@@ -32,11 +33,13 @@
               <label for="password">Password</label>
             </div>
             <!-- contraseña 2 -->
+            <!--
             <div class="input-field col s6">
               <i class="material-icons prefix">vpn_key</i>
-              <input id="password" type="password" class="validate">
-              <label for="password">Confirm Password</label>
+              <input id="password2" type="password" class="validate">
+              <label for="password2">Confirm Password</label>
             </div>
+            
           </div>
         </form>
       </div>
@@ -56,3 +59,34 @@
     <a href="/auth/login">Login</a>
   </p>
 </form>
+-->
+
+<h2>Signup</h2>
+
+<form action="/auth/signup" method="POST" id="form-container">
+  <label for="username">Nombre:</label>
+  <input id="username" type="text" name="username" placeholder="JonSnow">
+  <br><br>
+
+  <label for="email">Email:</label>
+  <input id="email" type="email" name="email" placeholder="email@email.com">
+
+  <br><br>
+
+  <label for="password">Contraseña:</label>
+  <input id="password" type="password" name="password" placeholder="Your password">
+  <br>
+  {{#if message }}
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+  <button>Create account</button>
+
+  <p class="account-message">
+    Ya tienes una cuenta?
+    <a href="/auth/login">Login</a>
+  </p>
+</form>
+

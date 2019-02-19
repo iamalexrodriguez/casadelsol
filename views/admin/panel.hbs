@@ -1,6 +1,13 @@
 <h2>Hola, administrador!</h2>
 
+<button class="btn waves-effect waves-light " type="submit" name="action">
+  <i class="material-icons right"></i>
+  <a href="/children/create">Agregar</a>
+</button>
+
+<!--
 <a href="/children/create">Agregar pequeñin</a>
+-->
 
 {{#each children as |child|}}
 <div class="row">
@@ -12,12 +19,13 @@
           <a href="/children/delete/{{this._id}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
         </div>
         <div class="card-content">
-          <p>Bio: {{child.bio}}</p>
-          <p>Intereses: {{child.interests}}</p>
+          <a href="/children/detail/{{this._id}}"> <p>Ver detalle</p> </a>
         </div>
       </div>
     </div>
-  </div>
+</div>
+
+<!--
 <div class="childCard">
 <h2>{{child.name}}</h2>
 <img src="{{child.profilePic}}" alt="photo">
@@ -26,3 +34,4 @@
 {{else}}
   <h2>Aún no hay niños.</h2>
 {{/each}}
+-->
