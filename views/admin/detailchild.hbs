@@ -7,8 +7,15 @@
 <h3><p>Intereses:</p></h3>
 <p>{{interests}}</p>
 
-
 <a href="/children/sponsors/{{this._id}}">Gestionar padrinos</a>
+<p>{{sponsors.role}}</p>
+<h5>Apadrinado por: </h5>
+{{#each sponsors}}
+<p>{{username}}</p>
+{{else}}
+<p>Aún no tiene padrinos</p>
+{{/each}}
+
 
 <br>
 <br>
