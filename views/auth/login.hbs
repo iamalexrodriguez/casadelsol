@@ -1,44 +1,40 @@
-<!--
 <h2>Login</h2>
 
 <div class="row">
     <form class="col s12" action="/auth/login" method="POST" id="form-container">
       <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <!-- name/user 
-            <div class="input-field col s6">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="email" type="text" class="validate" name="email">
-              <label for="email">Email</label>
-            </div>
-            <!-- password 
-            <div class="input-field col s6">
-              <i class="material-icons prefix">vpn_key</i>
-              <input id="password" type="password" name="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-        </form>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="username" type="text" name="email" class="validate">
+          <label for="username">Username</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Username</span>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="password" type="password" name="password" class="validate">
+          <label for="password">Password</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
+        </div>
       </div>
     </form>
-</div>
+  </div>
+
 
 {{#if message }}
   <div class="error-message">{{ message }}</div>
 {{/if}}
 
-<button class="btn waves-effect waves-light pulse" type="submit" name="action">Submit
-  <i class="material-icons right">send</i>
+<button class="btn waves-effect waves-light teal light-blue lighten-2">Login
+    <i class="material-icons right">send</i>
 </button>
 
 <p class="account-message">
   Todavía no tienes una cuenta?
   <a href="/auth/signup">Signup</a>
 </p>
--->
 
-  <h2>Login</h2>
+
+{{!-- <h2>Login</h2>
 
 <form action="/auth/login" method="POST" id="form-container">
   <label for="username">Username</label>
@@ -55,11 +51,25 @@
 
   <br><br>
 
-  <button>Login</button>
+  <button class="btn waves-effect waves-light ">Login
+    <i class="material-icons right">send</i>
+  </button>
 
 </form>
 
 <p class="account-message">
   Todavía no tienes una cuenta?
   <a href="/auth/signup">Signup</a>
-</p>
+</p> --}}
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous">
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
+</script>

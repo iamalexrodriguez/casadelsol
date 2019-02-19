@@ -1,4 +1,4 @@
-<!--
+
 <h2>Signup</h2>
 
 <div class="row">
@@ -6,62 +6,64 @@
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <!-- name/user 
+            {{!-- name/user --}}
             <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
-              <input id="username" type="text" class="validate">
-              <label for="username">Nombre</label>
+              <input id="username" type="text" name="username" class="validate">
+              <label for="username">Nombre: </label>
+              <span class="helper-text" data-error="wrong" data-success="right">JonSnow</span>
             </div>
-            <!-- email 
+            {{!-- email --}}
             <div class="input-field col s6">
               <i class="material-icons prefix">mail</i>
-              <input id="email" type="email" class="validate">
-              <label for="email">Email</label>
+              <input id="email" type="email" name="email" class="validate">
+              <label for="email">Email: </label>
+              <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
             </div>
           </div>
         </form>
       </div>
 
-<!-- constraseñas 
+{{!-- constraseñas --}}
       
       <div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
               <i class="material-icons prefix">vpn_key</i>
-              <input id="password" type="password" class="validate">
-              <label for="password">Password</label>
+              <input  id="password" type="password" name="password" class="validate">
+              <label for="password">Contraseña: </label>
+              <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
             </div>
-            <!-- contraseña 2 -->
-            <!--
+            {{!-- contraseña 2 --}}
+            {{!--
             <div class="input-field col s6">
               <i class="material-icons prefix">vpn_key</i>
               <input id="password2" type="password" class="validate">
               <label for="password2">Confirm Password</label>
             </div>
-            
+            --}}
           </div>
         </form>
       </div>
     </form>
 </div>
 
- {{#if message }}
+{{#if message }}
   <div class="error-message">{{ message }}</div>
-  {{/if}}
+{{/if}}
 
-<button class="btn waves-effect waves-light pulse" type="submit" name="action">Create account
+<button class="btn waves-effect waves-light " type="submit" name="action">Create account
     <i class="material-icons right ">send</i>
-  </button>
+</button>
 
   <p class="account-message">
     Ya tienes una cuenta?
     <a href="/auth/login">Login</a>
   </p>
 </form>
--->
 
-<h2>Signup</h2>
+{{!-- <h2>Signup</h2>
 
 <form action="/auth/signup" method="POST" id="form-container">
   <label for="username">Nombre:</label>
@@ -89,4 +91,17 @@
     <a href="/auth/login">Login</a>
   </p>
 </form>
+ --}}
 
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous">
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
+</script>
