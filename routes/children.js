@@ -3,58 +3,53 @@ const User = require("../models/User");
 const Child = require("../models/Child");
 const uploadCloud = require("../helpers/cloudinary");
 
-
 //hay que agregar auth
-router.post('/addsponsor/:id', (req, res, next)=>{
-  console.log(req.params)
-  const {id} = req.params
-  const padrinos = req.body.gestionpadrinos
+router.post("/addsponsor/:id", (req, res, next) => {
+  console.log(req.params);
+  const { id } = req.params;
+  const padrinos = req.body.gestionpadrinos;
 
-  console.log('duv')
-  console.log(padrinos)
-  Child.findByIdAndUpdate(id,{$push:{sponsors:padrinos}}, {new:true})
-  .then(() => {
-    res.redirect(`/children/detail/${id}`)
-  })
-  .catch(error => {
-    console.log(error)
-    es.render("/", { error });
-  });
+  console.log("duv");
+  console.log(padrinos);
+  Child.findByIdAndUpdate(id, { $push: { sponsors: padrinos } }, { new: true })
+    .then(() => {
+      res.redirect(`/children/detail/${id}`);
+    })
+    .catch(error => {
+      console.log(error);
+      es.render("/", { error });
+    });
+});
 
-})
-
-
-router.get('/sponsors/:id', (req,res,next)=>{
-  const {id} = req.params
-  let users 
+router.get("/sponsors/:id", (req, res, next) => {
+  const { id } = req.params;
+  let users;
   User.find()
-  .then((u)=>{
-    users = u
-    return Child.findById(id) 
-  }) 
-  .then(child=>{
-    res.render('admin/sponsorview', {users, child})
-  })
-  .catch(error=>{
-    res.render('admin/sponsorview', {error})
-  })
+    .then(u => {
+      users = u;
+      return Child.findById(id);
+    })
+    .then(child => {
+      res.render("admin/sponsorview", { users, child });
+    })
+    .catch(error => {
+      res.render("admin/sponsorview", { error });
+    });
+});
 
-})
-
-router.get('/detail/:id', (req,res,next)=>{
-  const{id} = req.params
-  const user = req.body
-
-
-  User.findById()
+router.get("/detail/:id", (req, res, next) => {
+  const { id } = req.params;
+  User.findById();
   Child.findById(id)
-    .then((child)=>{
-      res.render('admin/detailchild', child)
+    .populate("sponsors")
+    .then(child => {
+      console.log("morro", child);
+      res.render("admin/detailchild", child);
     })
-    .catch(error=>{
-      res.render('admin/detailchild', {error})
-    })
-})
+    .catch(error => {
+      res.render("admin/detailchild", { error });
+    });
+});
 
 router.get("/delete/:id", (req, res, next) => {
   Child.findByIdAndRemove(req.params.id)
