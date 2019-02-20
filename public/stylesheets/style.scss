@@ -1,21 +1,21 @@
 body {
-  padding: 50px;
   //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  //font-family: 'Indie Flower', cursive;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Ubuntu', sans-serif;
+}
+nav .brand-logo {
+  padding: 8px;
+}
+
+.prueba {
+  color: black;
 }
 
 a {
   color: white;
 }
 
-.nav-wrapper{
-  color: #ffb74d orange lighten-2;
-
-}
-
-.prueba {
-  color: black;
+.btn {
+  background-color: #018dc9;
 }
 
 .container{
@@ -36,4 +36,11 @@ a {
 
 .childCard img{
   width: 300px;
+}
+div {
+  display: block;
+}
+
+.textoproblematico{
+  margin: 45.0933333333rem 0 .656rem 0;
 }

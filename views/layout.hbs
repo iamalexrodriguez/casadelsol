@@ -5,41 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
 
-  <!-- Materializecss -->
+  {{!-- Materializecss --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Luckiest+Guy" rel="stylesheet">
+
+  {{!-- jQuery --}}
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous">
+  </script>
+
+  {{!-- Fonts  --}}
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+   
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
 
-<nav id="mainNav">
+<nav>
   {{#if loggedUser}}
+<<<<<<< HEAD
   <span>LOGO</span>
   <span>
     <a href="/">Home</a>
     <a href="/profile">Profile</a>
     <a href="/auth/logout">Logout</a>
   </span>
+=======
+  <div class="nav-wrapper teal white">
+    <img src="../images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+      <li><a href="/auth/profile" class="blue-text text-darken-2"></a></li>
+      <li><a href="/auth/logout" class="blue-text text-darken-2">Logout</a></li>
+    </ul>
+  </div>
+>>>>>>> mario
   {{else}}
-  <span>LOGO</span>
-  <span>
-    <a href="/">Home</a>
-    <a href="/auth/signup">Signup</a>
-    <a href="/auth/login">Login</a>
-    
-  </span>
+  <div class="nav-wrapper teal white">
+    <img src="../images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+      <li><a href="/auth/signup" class="blue-text text-darken-2">Signup</a></li>
+      <li><a href="/auth/login" class="blue-text text-darken-2">Login</a></li>
+    </ul>
 {{/if}}
+  </div>
 </nav>
-
 
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 </html>
