@@ -27,23 +27,21 @@
 
 <nav>
   {{#if loggedUser}}
-<<<<<<< HEAD
-  <span>LOGO</span>
-  <span>
-    <a href="/">Home</a>
-    <a href="/profile">Profile</a>
-    <a href="/auth/logout">Logout</a>
-  </span>
-=======
   <div class="nav-wrapper teal white">
     <img src="../images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="/" class="blue-text text-darken-2">Home</a></li>
-      <li><a href="/auth/profile" class="blue-text text-darken-2"></a></li>
+      <li><a href="/profile" class="blue-text text-darken-2">Profile</a></li>
       <li><a href="/auth/logout" class="blue-text text-darken-2">Logout</a></li>
     </ul>
   </div>
->>>>>>> mario
+   {{else}} {{#if isAdmin}}
+   <div class="nav-wrapper teal white">
+    <img src="../images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+      <li><a href="/auth/logout" class="blue-text text-darken-2">Logout</a></li>
+    </ul>
   {{else}}
   <div class="nav-wrapper teal white">
     <img src="../images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
@@ -52,7 +50,8 @@
       <li><a href="/auth/signup" class="blue-text text-darken-2">Signup</a></li>
       <li><a href="/auth/login" class="blue-text text-darken-2">Login</a></li>
     </ul>
-{{/if}}
+{{/if}}{{/if}}
+
   </div>
 </nav>
 
