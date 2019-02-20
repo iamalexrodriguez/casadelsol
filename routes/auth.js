@@ -14,7 +14,6 @@ const bcryptSalt = 10;
 //Middleware Loggedin
 
 function isLoggedIn(req, res, next) {
-  //if(req.session.currentUser){
   if (req.isAuthenticated()) {
     next();
   } else {
@@ -66,18 +65,14 @@ router.post(
   (req, res, next) => {
     if (req.user.role === "ADMIN") return res.redirect("/children");
     const email = req.body.email;
-    Promise.all([
-      User.findOne({ email: email }),
-      Child.find({ sponsors: req.user._id })
-    ])
+    User.findOne({ email: email })
       .then(r => {
-        //r[1].sponsors
-        console.log(r[1]);
-        res.render("user/profile", { user: r[0], children: r[1] });
+        res.redirect("/profile");
       })
       .catch(e => next(e));
   }
 );
+
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");

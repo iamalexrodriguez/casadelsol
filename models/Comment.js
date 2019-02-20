@@ -9,6 +9,12 @@ let commentSchema = new Schema({
   },
   body: String,
   photoURL: String,
-})
+},
+{timestamps:true,
+versionKey:false}
+)
+
+
+
 
 module.exports = mongoose.model('Comment', commentSchema)

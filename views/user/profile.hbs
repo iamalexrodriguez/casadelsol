@@ -4,7 +4,13 @@
 
 {{#each children as |child|}}
 <img width='300'  src="{{child.profilePic}}" alt="">
-<p>{{child.name}}</p>
+<p><h2>{{child.name}}</h2></p>
+<p>Bio: </p>
+<p>{{child.bio}}</p>
+<p>Intereses: </p>
+<p>{{child.interests}}</p>
+<a href="/profile/gallery/{{child._id}}">Visitar galería</a>
+<br> <br>
 {{else}}
  <h2>Aún no tienes ahijados registrados a tu nombre.</h2>
 {{/each}}

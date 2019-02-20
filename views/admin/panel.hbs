@@ -11,7 +11,7 @@
 
 {{#each children as |child|}}
 <div class="row">
-    <div class="col s12 m6">
+    <div class="col s3">
       <div class="card">
         <div class="card-image">
           <img src="{{child.profilePic}}">
@@ -20,6 +20,7 @@
         </div>
         <div class="card-content">
           <a href="/children/detail/{{this._id}}"> <p>Ver detalle</p> </a>
+          <a href="/children/addpost/{{this._id}}"> <p>Agregar mensaje</p> </a>
         </div>
       </div>
     </div>
