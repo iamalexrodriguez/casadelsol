@@ -1,55 +1,26 @@
 <h2>Login</h2>
 
-<div class="row">
-    <form class="col s12" action="/auth/login" method="POST" id="form-container">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="username" type="text" name="email" class="validate">
-          <label for="username">Username</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Username</span>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">vpn_key</i>
-          <input id="password" type="password" name="password" class="validate">
-          <label for="password">Password</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
-        </div>
-      </div>
-    </form>
+<form action="/auth/login" method="POST" id="form-container">
+  {{!-- Username --}}
+  <div class="input-field col s6">
+    <i class="material-icons prefix">account_circle</i>
+    <label for="username">Email</label>
+    <input id="username" type="text" name="email">
+    <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
   </div>
 
+  {{!-- Password --}}
+  <div class="input-field col s6">
+    <i class="material-icons prefix">vpn_key</i>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password">
+    <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
+  </div>
 
-{{#if message }}
-  <div class="error-message">{{ message }}</div>
-{{/if}}
-
-<button class="btn waves-effect waves-light teal light-blue lighten-2">Login
-    <i class="material-icons right">send</i>
-</button>
-
-<p class="account-message">
-  Todavía no tienes una cuenta?
-  <a href="/auth/signup">Signup</a>
-</p>
-
-
-{{!-- <h2>Login</h2>
-
-<form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="email" placeholder="Username">
-
-  <br><br>
-
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
+  {{!-- message --}}
   {{#if message }}
   <div class="error-message">{{ message }}</div>
   {{/if}}
-
-  <br><br>
 
   <button class="btn waves-effect waves-light ">Login
     <i class="material-icons right">send</i>
@@ -59,17 +30,7 @@
 
 <p class="account-message">
   Todavía no tienes una cuenta?
-  <a href="/auth/signup">Signup</a>
-</p> --}}
-
-<script
-  src="https://code.jquery.com/jquery-3.3.1.slim.js"
-  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-  crossorigin="anonymous">
-</script>
-
-<script>
-  $(document).ready(function() {
-    $('input#input_text, textarea#textarea2').characterCounter();
-  });
-</script>
+  <button class="btn waves-effect waves-light">
+    <a href="/auth/signup">Signup</a>
+  </button>
+</p>

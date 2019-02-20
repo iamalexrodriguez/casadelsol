@@ -1,12 +1,17 @@
 body {
-  padding: 0;
   font-family: 'Ubuntu', sans-serif; }
+
+nav .brand-logo {
+  padding: 8px; }
+
+.prueba {
+  color: black; }
 
 a {
   color: white; }
 
-.prueba {
-  color: black; }
+.btn {
+  background-color: #018dc9; }
 
 .container {
   display: flex;
@@ -26,5 +31,8 @@ a {
 
 div {
   display: block; }
+
+.textoproblematico {
+  margin: 45.0933333333rem 0 .656rem 0; }
 
 /*# sourceMappingURL=style.css.map */

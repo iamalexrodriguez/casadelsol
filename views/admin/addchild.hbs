@@ -1,9 +1,16 @@
   <div id="panel">
     <h2>Agrega un niño a la base de datos</h2>
     <form action="/children/create" method="POST" enctype="multipart/form-data">
-      <p>Nombre completo del niño:</p>
+      {{!-- Nombre del niño --}}
+      {{!-- <p>Nombre completo del niño:</p>
       <input type="text" name="name">
-      <br>
+      <br> --}}
+      <div class="input-field col s6">
+        <i class="material-icons prefix">face</i>
+        <label for="name">Nombre completo del niño:</label>
+        <input type="text" name="name">
+      </div>
+
       <p>Foto de perfil:</p>
       <input type="file" name="profilePic" required="true">
       <br>
