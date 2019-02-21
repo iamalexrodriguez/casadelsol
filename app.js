@@ -16,6 +16,17 @@ const passport = require("./passport/localStrategy");
 
 const { isRole } = require("./helpers/middlewares");
 
+//hbs helpers
+// hbs.registerHelper("checkSelected", function(id, childId) {
+//   // let found = child.sponsors.find(s => s == id);
+//   // console.log(id, child);
+//   console.log(id);
+//   console.log(child);
+//   let found = true;
+//   if (!found) return null;
+//   return "selected";
+// });
+
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
   .then(x => {
@@ -97,26 +108,23 @@ function isLogged(req, res, next) {
   }
 }
 
-
-
 function isAdmin(req, res, next) {
   if (req.isAuthenticated() && req.user.role === "ADMIN") {
-    app.locals.isAdmin = true
-    next()
-  } else{
-    app.locals.isAdmin = false
-    next()
+    app.locals.isAdmin = true;
+    next();
+  } else {
+    app.locals.isAdmin = false;
+    next();
   }
 }
 
-const profile = require('./routes/profile')
+const profile = require("./routes/profile");
 const children = require("./routes/children");
 const index = require("./routes/index");
 const auth = require("./routes/auth");
-app.use('/profile', isLogged, isAdmin, isRole('SPONSOR'), profile)
-app.use("/children", isLogged, isAdmin,isRole('ADMIN'), children);
+app.use("/profile", isLogged, isAdmin, isRole("SPONSOR"), profile);
+app.use("/children", isLogged, isAdmin, isRole("ADMIN"), children);
 app.use("/auth", isLogged, auth);
 app.use("/", isLogged, index);
 
 module.exports = app;
-

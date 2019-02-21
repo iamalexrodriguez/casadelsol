@@ -15,11 +15,14 @@
           <h5>Apadrinado por: </h5>
           {{#each sponsors}}
           <p>{{username}}</p>
+          <p>{{email}}</p>
           {{else}}
           <p>Aún no tiene padrinos</p>
           {{/each}}
         </div>
         <div class="card-action">
+          <a href="/children/addpost/{{this._id}}">Agregar mensaje</a>
+          <a href="/children/gallery/{{this._id}}">Visitar galería</a>
           <a href="/children/sponsors/{{this._id}}" class="btn-floating  waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
           <a href="/children/delete/{{this._id}}" class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
         </div>
