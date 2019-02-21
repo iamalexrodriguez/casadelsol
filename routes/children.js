@@ -6,6 +6,19 @@ const uploadCloud = require("../helpers/cloudinary");
 
 //hay que agregar auth
 
+
+router.get("/gallery/:id", (req, res, next) => {
+  const { id } = req.params;
+  Child.findById(id)
+    .populate("pictureGallery")
+    .then(child => {
+      console.log(child);
+      res.render("user/gallery", child);
+    })
+    .catch(e => next(e));
+});
+
+
 router.get("/addpost/:id", (req, res, next) => {
   const { id } = req.params;
   res.render("admin/addpost", { id });
@@ -23,7 +36,7 @@ router.post("/addpost/:id", uploadCloud.single("photoURL"), (req, res, next) => 
         { $push: { pictureGallery: doc._id } },
         { new: true }
       )
-      .then(()=>{res.redirect("/children");})
+      .then(()=>{res.redirect(`/children/gallery/${id}`);})
       .catch(()=>{res.render("/", { error });})
     })
     .catch(error => {
@@ -41,6 +54,24 @@ router.post("/addsponsor/:id", (req, res, next) => {
     .catch(error => {
       console.log(error);
       res.render("/", { error });
+    });
+});
+
+
+router.post("/removesponsor/:id", (req, res, next) => {
+  const { id } = req.params;
+  const padrinos = req.body.gestionpadrinos;
+  console.log(padrinos)
+  // Child.findByIdAndUpdate(id, { $pull: { sponsors: padrinos } }, { new: true })
+
+  //!!
+  Child.findByIdAndUpdate(id,{$pull: {sponsors : { in: [padrinos]}}}, {multi:true})
+    .then(() => {
+      res.redirect(`/children/detail/${id}`);
+    })
+    .catch(error => {
+      console.log(error);
+      res.render("/children", { error });
     });
 });
 

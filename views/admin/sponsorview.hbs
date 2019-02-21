@@ -10,3 +10,19 @@
 <br>
       <input type="submit" value="Actualizar">
 </form>
+
+
+
+
+<h3>Elimina padrinos de: {{child.name}}</h3>
+
+<form action="/children/removesponsor/{{child._id}}" method="POST">
+<select size="{{users.length}}" name="gestionpadrinos"  style="display:inherit;height:200px"multiple="yes">
+  {{#each users}}
+  <option value="{{this._id}}">{{this.username}}</option>
+  {{/each}}
+</select>
+
+<br>
+      <input type="submit" value="Actualizar">
+</form>

@@ -16,6 +16,9 @@
     <input id="email" type="email" name="email">
     <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
   </div>
+  {{#if message}}
+      <p style="color: red;">{{message}}</p>
+  {{/if}}
   {{!-- Password --}}
   <div class="input-field col s6">
     <i class="material-icons prefix">vpn_key</i>
@@ -41,3 +44,5 @@
   </p>
   
 </form>
+
+

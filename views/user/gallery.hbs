@@ -10,7 +10,17 @@
 <p>Aquí podrás ver fotos de tu ahijado</p>
 {{/each}}
 
-<a href="/profile">Regresar</a>
+{{#if logged}}
+
+<a href="/profile">Regresar a perfil</a>
+
+{{else}} {{#if isAdmin}}
+
+<a href="/children">Regresar a niños</a>
+
+{{/if}}{{/if}}
+
+
 
 
 <script src="https://unpkg.com/moment"></script>

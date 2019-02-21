@@ -113,9 +113,10 @@ const profile = require('./routes/profile')
 const children = require("./routes/children");
 const index = require("./routes/index");
 const auth = require("./routes/auth");
-app.use('/profile', isLogged, isRole('SPONSOR'),isAdmin, profile)
-app.use("/children", isAdmin, isRole('ADMIN'), children);
-app.use("/auth",  isAdmin,isLogged, auth);
-app.use("/", isLogged, isAdmin, index);
+app.use('/profile', isLogged, isAdmin, isRole('SPONSOR'), profile)
+app.use("/children", isLogged, isAdmin,isRole('ADMIN'), children);
+app.use("/auth", isLogged, auth);
+app.use("/", isLogged, index);
 
 module.exports = app;
+

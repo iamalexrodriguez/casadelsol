@@ -58,6 +58,8 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login", { message: req.flash("error") });
 });
 
+
+
 router.post(
   "/login",
   passport.authenticate("local"),
