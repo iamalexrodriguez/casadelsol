@@ -1,9 +1,11 @@
-<h4>Agregar mensaje</h4>
-
-<h3>{{error}}</h3>
-
-<form action="/children/addpost/{{id}}" method="POST" enctype="multipart/form-data">
-  <input type="file" name="photoURL" required="true">
-  <input type="text" name="description" required="true" placeholder="Agrega una descripción">
-  <input type="submit" value="Agregar post">
-</form>
+<section>
+      <div class="container">
+        <h4>Agregar mensaje</h4>
+          <form action="/children/addpost/{{id}}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="photoURL" required="true">
+            <input type="text" name="description" required="true" placeholder="Agrega una descripción">
+            <input type="submit" value="Agregar post">
+          </form>
+      </div>
+          <h3>{{error}}</h3>
+</section>

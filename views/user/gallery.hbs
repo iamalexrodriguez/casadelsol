@@ -1,15 +1,29 @@
-<h4>Galería</h4>
+<h4 class="center">Galería</h4>
 
+<div id="cont-detail">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col 12">
+          <div class="section">
+            {{#each pictureGallery}}
+              <div class="col m4 s12">
+                <div class="card hoverable">
+                  <div class="card-image">
+                    <img class="materialboxed" width="300" src="{{this.photoURL}}" alt="foto">
+                  </div>
+                  <div class="card-content">
+                    <span class="fechas"><u>{{this.createdAt}}</span></u>
+                    <h5>{{this.description}}</h5> 
+                  </div>
+                </div>
+              </div>         
 
-
-{{#each pictureGallery}}
-<div class="container">
-  <div class="row">
-    <div class="col m6 s12">
-      <div class="icon-block">
-        <img class="materialboxed" width="300" src="{{this.photoURL}}" alt="foto">
-        <h5>{{this.description}}</h5> 
-        <span class="fechas"><u>{{this.createdAt}}</span></u>
+            {{else}}
+            <p>Aquí podrás ver fotos de tu ahijado</p>
+            {{/each}}
+          </div>
+        </div>
       </div>
     </div>
   </div>

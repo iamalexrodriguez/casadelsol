@@ -1,6 +1,7 @@
 body {
   //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: 'Ubuntu', sans-serif;
+  // background-color: antiquewhite;
 }
 nav .brand-logo {
   padding: 8px;
@@ -28,6 +29,10 @@ a {
 
 }
 
+.nidet{
+  padding-left: 40px;
+  padding-right: 40px;
+}
 .childCard{
   align-items:center;
   justify-content: center;

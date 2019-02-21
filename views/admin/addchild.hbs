@@ -1,48 +1,52 @@
-  <div id="panel">
-    <h2>Agrega un niño a la base de datos</h2>
-    <form action="/children/create" method="POST" enctype="multipart/form-data">
+<section class="center">
+  <div class="container">
+    <div id="panel">
+      <h2>Agrega un niño a la base de datos</h2>
+      <form action="/children/create" method="POST" enctype="multipart/form-data">
 
-      {{!-- Nombre del niño --}}
-      <div class="input-field col s12">
-        <i class="material-icons prefix">face</i>
-        <label for="name">Nombre completo del niño:</label>
-        <input type="text" name="name">
-      </div>
-
-      {{!-- Foto --}}
-      <div class="file-field input-field">
-        <div class="btn">
-          <i class="material-icons prefix">cloud_upload</i>
-          <label for="profilePic">Foto de perfil:</label>
-          <input type="file" name="profilePic">
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text" name="profilePic">
-        </div>
-      </div>
-
-      {{!-- Biografía --}}
-      <div class="row">
+        {{!-- Nombre del niño --}}
         <div class="input-field col s12">
-          <i class="material-icons prefix">short_text</i>
-          <textarea id="textarea2" class="materialize-textarea" data-length="120" name="bio"></textarea>
-          <label for="textarea2">Biografía:</label>
+          <i class="material-icons prefix">face</i>
+          <label for="name">Nombre completo del niño:</label>
+          <input type="text" name="name">
         </div>
-      </div>
 
-      {{!-- Intereses --}}
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">palette</i>
-          <textarea id="textarea2" class="materialize-textarea" data-length="120" name="interests"></textarea>
-          <label for="textarea2">Intereses:</label>
+        {{!-- Foto --}}
+          <div class="file-field input-field">
+            <div class="btn">
+              <i class="material-icons prefix">cloud_upload</i>
+              <label for="profilePic" style="color:white">Foto de perfil:</label>
+              <input type="file" name="profilePic">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" name="profilePic">
+            </div>
+          </div>
+
+        {{!-- Biografía --}}
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">short_text</i>
+            <textarea id="textarea2" class="materialize-textarea" data-length="120" name="bio"></textarea>
+            <label for="textarea2">Biografía:</label>
+          </div>
         </div>
-      </div>
 
-      {{!-- boton --}}
-      <button class="btn waves-effect waves-light ">Agregar
-        <i class="material-icons right">add</i>
-      </button>
-      
-    </form>
+        {{!-- Intereses --}}
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">palette</i>
+            <textarea id="textarea2" class="materialize-textarea" data-length="120" name="interests"></textarea>
+            <label for="textarea2">Intereses:</label>
+          </div>
+        </div>
+
+        {{!-- boton --}}
+        <button class="btn waves-effect waves-light ">Agregar
+          <i class="material-icons right">add</i>
+        </button>
+        
+      </form>
+    </div>
   </div>
+</section>

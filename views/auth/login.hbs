@@ -1,41 +1,45 @@
-<h2>Login</h2>
+<section class="center">
+    <h2>Login</h2>
+  <div class="container">
 
-<form action="/auth/login" method="POST" id="form-container">
 
-  {{!-- Username --}}
-  <div class="input-field col s6">
-    <i class="material-icons prefix">account_circle</i>
-    <label for="username">Email</label>
-    <input id="username" type="text" name="email">
-    <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
-  </div>
+    <form action="/auth/login" method="POST" id="form-container">
+      {{!-- Username --}}
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <label for="username">Email</label>
+        <input id="username" type="text" name="email">
+        <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
+      </div>
 
-  {{!-- Password --}}
-  <div class="input-field col s6">
-    <i class="material-icons prefix">vpn_key</i>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password">
-    <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
-  </div>
+      {{!-- Password --}}
+      <div class="input-field col s6">
+        <i class="material-icons prefix">vpn_key</i>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+        <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
+      </div>
 
-  {{!-- message --}}
-  {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
+      {{!-- message --}}
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
 
-  <button class="btn waves-effect waves-light ">Login
-    <i class="material-icons right">send</i>
-  </button>
+      <button class="btn waves-effect waves-light ">Login
+        <i class="material-icons right">send</i>
+      </button>
 
-</form>
-
-<p class="account-message">
-  Todavía no tienes una cuenta?
-  <button class="btn waves-effect waves-light">
-    <a href="/auth/signup">Signup</a>
-  </button>
-</p>
 
 {{#if message}}
       <p style="color: red;">{{message}}</p>
   {{/if}}
+    </form>
+
+  </div>
+    <p class="account-message">
+      ¿Todavía no tienes una cuenta?
+    </p>
+      <button class="btn waves-effect waves-light">
+        <a href="/auth/signup" style="color:white">Signup</a>
+      </button>
+</section>
