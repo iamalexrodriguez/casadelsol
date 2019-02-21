@@ -1,16 +1,35 @@
-<h3>Bienvenido a tu perfil, {{user.username}}</h3>
+<h5>Bienvenido a tu perfil, {{user.username}}</h5>
 
-<h4>Tus ahijados:</h4>
+<h6>Tus ahijados:</h6>
 
-{{#each children as |child|}}
-<img width='300'  src="{{child.profilePic}}" alt="">
-<p><h2>{{child.name}}</h2></p>
-<p>Bio: </p>
-<p>{{child.bio}}</p>
-<p>Intereses: </p>
-<p>{{child.interests}}</p>
-<a href="/profile/gallery/{{child._id}}">Visitar galería</a>
-<br> <br>
-{{else}}
- <h2>Aún no tienes ahijados registrados a tu nombre.</h2>
-{{/each}}
+<div id="cont-detail">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col 12">
+          <div class="section">
+            {{#each children as |child|}}
+              <div class="col m4 s12">
+                <div class="card card hoverable">
+                  <div class="card-image">
+                    <img src="{{child.profilePic}}">
+                    <a href="/profile/gallery/{{child._id}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">photo_library</i></a>
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title">{{child.name}}</span>
+                    <h6>Bio: </h6>
+                    <h8>{{child.bio}}</h8>
+                    <h6>Intereses: </h6>
+                    <p>{{child.interests}}</p>
+                  </div>
+                </div>
+              </div>         
+            {{else}}
+            <h2>Aún no tienes ahijados registrados a tu nombre.</h2>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

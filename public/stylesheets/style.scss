@@ -10,9 +10,9 @@ nav .brand-logo {
   color: black;
 }
 
-a {
-  color: white;
-}
+// a {
+//   color: white;
+// }
 
 .btn {
   background-color: #018dc9;
@@ -42,5 +42,18 @@ div {
 }
 
 .textoproblematico{
-  margin: 45.0933333333rem 0 .656rem 0;
+  margin: 30.0933333333rem 0 .656rem 0;
+}
+
+.cont-detail{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+ }
+
+ .parallax-container .carousel a img {
+  background-size:100% auto;
+  background-repeat: no-repeat;
 }

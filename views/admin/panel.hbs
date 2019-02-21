@@ -5,15 +5,15 @@
   <a href="/children/create">Agregar</a>
 </button>
 
+<div id="cont-detail">
 <div class="container">
   <div class="section">
     <div class="row">
       <div class="col 12">
         <div class="section">
           {{#each children as |child|}}
-          <div class="row">
-            <div class="col s12 m6 l4">
-              <div class="card">
+            <div class="col m4 s12">
+              <div class="card card hoverable">
                 <div class="card-image">
                   <img src="{{child.profilePic}}">
                   <a href="/children/detail/{{this._id}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">face</i></a>
@@ -22,8 +22,7 @@
                   <span class="card-title">{{child.name}}</span>
                 </div>
               </div>
-            </div>
-          </div>
+            </div>         
 
           {{else}}
           <h2>Aún no hay niños.</h2>
@@ -33,18 +32,18 @@
     </div>
   </div>
 </div>
-{{else}}
-  <h2>Aún no hay niños.</h2>
-{{/each}}
-
-{{!-- 
-<div class="childCard">
-  
-<h2>{{child.name}}</h2>
-<img src="{{child.profilePic}}" alt="photo">
- <a href="/children/detail/{{this._id}}"> <p>Ver detalle</p> </a>
 </div>
-{{else}}
-  <h2>Aún no hay niños.</h2>
-{{/each}} --}}
 
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous">
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('.parallax').parallax();
+    $('.button-collapse').sideNav();
+  });    
+</script>
