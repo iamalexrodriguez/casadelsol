@@ -1,32 +1,28 @@
-<h3>Detalle del niño:</h3>
-
-<h4>{{name}}</h4>
-<img width='300' src="{{profilePic}}" alt="Foto del niño">
-<h3><p>Bio:</p></h3>
-<p>{{bio}}</p>
-<h3><p>Intereses:</p></h3>
-<p>{{interests}}</p>
-<a href="/children/addpost/{{this._id}}">Agregar post</a>
-<br> <br>
-<a href="/children/gallery/{{this._id}}">Visitar galería</a>
-<br><br>
-<a href="/children/sponsors/{{this._id}}">Gestionar padrinos</a>
-<p>{{sponsors.role}}</p>
-
-
-<h5>Apadrinado por: </h5>
-{{#each sponsors}}
-<p>{{username}}</p>
-<a href="mailto:{{email}}">Enviar mail:       </a><span>{{email}}</span>
-{{else}}
-<p>Aún no tiene padrinos</p>
-{{/each}}
-
-
-<br>
-<br>
-
-<a href="/children">Regresar</a>
-<br><br>
-
-<a href="/children/delete/{{this._id}}">Dar de baja</a>
+  <div class="col s12 m7">
+    <h2 class="header">{{name}}</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img width='300' src="{{profilePic}}" alt="Foto del niño">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h3>Info</h3>
+          <h4><p>Bio:</p></h4>
+          <p>{{bio}}</p>
+          <h5><p>Intereses:</p></h5>
+          <p>{{interests}}</p>
+          <p>{{sponsors.role}}</p>
+          <h5>Apadrinado por: </h5>
+          {{#each sponsors}}
+          <p>{{username}}</p>
+          {{else}}
+          <p>Aún no tiene padrinos</p>
+          {{/each}}
+        </div>
+        <div class="card-action">
+          <a href="/children/sponsors/{{this._id}}" class="btn-floating  waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
+          <a href="/children/delete/{{this._id}}" class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -7,9 +7,6 @@ nav .brand-logo {
 .prueba {
   color: black; }
 
-a {
-  color: black; }
-
 .btn {
   background-color: #018dc9; }
 
@@ -33,6 +30,17 @@ div {
   display: block; }
 
 .textoproblematico {
-  margin: 45.0933333333rem 0 .656rem 0; }
+  margin: 30.0933333333rem 0 .656rem 0; }
+
+.cont-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.parallax-container .carousel a img {
+  background-size: 100% auto;
+  background-repeat: no-repeat; }
 
 /*# sourceMappingURL=style.css.map */

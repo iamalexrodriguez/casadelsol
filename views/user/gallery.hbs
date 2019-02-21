@@ -3,8 +3,18 @@
 
 
 {{#each pictureGallery}}
-<img width="300" src="{{this.photoURL}}" alt="foto">
-<p>{{this.description}} <span class="fechas"><u>{{this.createdAt}}</span></u></p>
+<div class="container">
+  <div class="row">
+    <div class="col m6 s12">
+      <div class="icon-block">
+        <img class="materialboxed" width="300" src="{{this.photoURL}}" alt="foto">
+        <h5>{{this.description}}</h5> 
+        <span class="fechas"><u>{{this.createdAt}}</span></u>
+      </div>
+    </div>
+  </div>
+</div>
+  
 
 {{else}}
 <p>Aquí podrás ver fotos de tu ahijado</p>
@@ -30,4 +40,11 @@
   for (let i = 0; i < fechas.length; i++) {
     fechas[i].innerText = moment().locale('es').format('L')
   }
+</script>
+
+{{!-- Zoom --}}
+<script>
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
 </script>
