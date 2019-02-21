@@ -1,43 +1,47 @@
-<h2>Signup</h2>
+<section class="center">
+  <div class="container">
+    <h2>Signup</h2>
 
-<form action="/auth/signup" method="POST" id="form-container">
-  {{!-- Username --}}
-  <div class="input-field col s6">
-    <i class="material-icons prefix">account_circle</i>
-    <label for="username">Nombre:</label>
-    <input id="username" type="text" name="username">
-    <span class="helper-text" data-error="wrong" data-success="right">JonSnow</span>
-  </div>
+    <form action="/auth/signup" method="POST" id="form-container">
+      {{!-- Username --}}
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <label for="username">Nombre:</label>
+        <input id="username" type="text" name="username">
+        <span class="helper-text" data-error="wrong" data-success="right">JonSnow</span>
+      </div>
 
-  {{!-- Email --}}
-  <div class="input-field col s6">
-    <i class="material-icons prefix">mail</i>
-    <label for="email">Email:</label>
-    <input id="email" type="email" name="email">
-    <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
-  </div>
-  {{!-- Password --}}
-  <div class="input-field col s6">
-    <i class="material-icons prefix">vpn_key</i>
-    <label for="password">Contraseña:</label>
-    <input id="password" type="password" name="password">
-    <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
-  </div>
-  {{!-- messages --}}
-  {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
+      {{!-- Email --}}
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mail</i>
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email">
+        <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
+      </div>
+      {{!-- Password --}}
+      <div class="input-field col s6">
+        <i class="material-icons prefix">vpn_key</i>
+        <label for="password">Contraseña:</label>
+        <input id="password" type="password" name="password">
+        <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
+      </div>
+      {{!-- messages --}}
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
 
-  <button class="btn waves-effect waves-light">
-    Create account
-    <i class="material-icons right ">send</i>
-  </button>
+      <button class="btn waves-effect waves-light">
+        crea tu cuenta
+        <i class="material-icons right ">send</i>
+      </button>
 
-  <p class="account-message">
-    Ya tienes una cuenta?
-    <button class="btn waves-effect waves-light">
-      <a href="/auth/login">Login</a>
-    </button>
-  </p>
-  
-</form>
+      <p class="account-message">
+        Ya tienes una cuenta?
+        <button class="btn waves-effect waves-light">
+          <a href="/auth/login" style="color:white">Login</a>
+        </button>
+      </p>
+      
+    </form>
+    </div>
+</section>

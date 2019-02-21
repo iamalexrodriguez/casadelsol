@@ -18,6 +18,10 @@ nav .brand-logo {
   flex-direction: row;
   flex-flow: wrap; }
 
+.nidet {
+  padding-left: 40px;
+  padding-right: 40px; }
+
 .childCard {
   align-items: center;
   justify-content: center;
