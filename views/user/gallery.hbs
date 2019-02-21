@@ -18,7 +18,6 @@
                   </div>
                 </div>
               </div>         
-
             {{else}}
             <p>Aquí podrás ver fotos de tu ahijado</p>
             {{/each}}
@@ -28,15 +27,27 @@
     </div>
   </div>
 </div>
+  
+
+{{#if logged}}
+
+<a href="/profile">Regresar a perfil</a>
+
+{{else}} {{#if isAdmin}}
+
+<a href="/children">Regresar a niños</a>
+
+{{/if}}{{/if}}
+
+
+
 
 <script src="https://unpkg.com/moment"></script>
 <script>
-  moment.locale('es')
   let fechas = document.getElementsByClassName('fechas')
-  console.log(fechas)
-
+  moment.locale('es')
   for (let i = 0; i < fechas.length; i++) {
-    fechas[i].innerText = moment().format('L')
+    fechas[i].innerText = moment().locale('es').format('L')
   }
 </script>
 

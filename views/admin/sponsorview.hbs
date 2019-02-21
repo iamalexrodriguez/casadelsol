@@ -2,7 +2,24 @@
   <div class="containet">
     <h3>Agrega padrinos a: {{child.name}}</h3>
 
-    <form action="/children/addsponsor/{{child._id}}" method="POST">
+<h1>{{error}}</h1>
+
+<form id="{{child._id}}" action="/children/addsponsor/{{child._id}}" method="POST">
+  <select size="{{users.length}}" name="gestionpadrinos" style="display:inherit;height:200px" multiple="yes">
+    {{#each users}}
+    <option id="{{this._id}}" value="{{this._id}}">{{this.username}}</option>
+    {{/each}}
+  </select>
+
+
+
+  <br>
+  <input type="submit" value="Actualizar">
+</form>
+
+
+
+    {{!-- <form action="/children/addsponsor/{{child._id}}" method="POST">
     <select size="{{users.length}}" name="gestionpadrinos"  style="display:inherit;height:200px"multiple="yes">
       {{#each users}}
       <option value="{{this._id}}">{{this.username}}</option>
@@ -11,6 +28,36 @@
 
     <br>
           <input type="submit" value="Actualizar">
-    </form>
+    </form> --}}
   </div>
 </section>
+
+{{!-- <h3>Elimina padrinos de: {{child.name}}</h3>
+
+<form action="/children/removesponsor/{{child._id}}" method="POST">
+  <select size="{{users.length}}" name="gestionpadrinos" style="display:inherit;height:200px" multiple="yes">
+    {{#each users}}
+    <option value="{{this._id}}">{{this.username}}</option>
+    {{/each}}
+  </select>
+
+  <br>
+  <input type="submit" value="Actualizar">
+</form>
+ --}}
+
+<script>
+
+  let id = "{{child._id}}"
+  console.log(id)
+  fetch("/children/api/child/" + id)
+    .then(res => res.json())
+    .then(child => {
+
+      for (let s of child.sponsors) {
+        document.getElementById(s).setAttribute('selected', true)
+      }
+
+    })
+
+</script>

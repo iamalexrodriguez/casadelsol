@@ -10,7 +10,6 @@ passport.use(
       passwordField: "password"
     },
     (email, password, done) => {
-      console.log(email, password, "polloyon");
       User.findOne({ email })
         .then(foundUser => {
           if (!foundUser) {

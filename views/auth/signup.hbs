@@ -11,7 +11,30 @@
         <span class="helper-text" data-error="wrong" data-success="right">JonSnow</span>
       </div>
 
-      {{!-- Email --}}
+  {{!-- Email --}}
+  <div class="input-field col s6">
+    <i class="material-icons prefix">mail</i>
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email">
+    <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
+  </div>
+  {{#if message}}
+      <p style="color: red;">{{message}}</p>
+  {{/if}}
+  {{!-- Password --}}
+  <div class="input-field col s6">
+    <i class="material-icons prefix">vpn_key</i>
+    <label for="password">Contraseña:</label>
+    <input id="password" type="password" name="password">
+    <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
+  </div>
+  {{!-- messages --}}
+  {{#if message }}
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  
+      {{!-- Email
       <div class="input-field col s6">
         <i class="material-icons prefix">mail</i>
         <label for="email">Email:</label>
@@ -28,13 +51,25 @@
       {{!-- messages --}}
       {{#if message }}
       <div class="error-message">{{ message }}</div>
-      {{/if}}
+      {{/if}} --}}
 
       <button class="btn waves-effect waves-light">
         crea tu cuenta
         <i class="material-icons right ">send</i>
       </button>
 
+<<<<<<< HEAD
+  <p class="account-message">
+    Ya tienes una cuenta?
+    <button class="btn waves-effect waves-light">
+      <a href="/auth/login">Login</a>
+    </button>
+  </p>
+  
+</form>
+
+
+=======
       <p class="account-message">
         Ya tienes una cuenta?
         <button class="btn waves-effect waves-light">
@@ -45,3 +80,4 @@
     </form>
     </div>
 </section>
+>>>>>>> mario
