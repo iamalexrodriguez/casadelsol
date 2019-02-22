@@ -1,30 +1,24 @@
-<h4 class="center">Galería</h4>
+<h4 class="center">Galería de {{name}}</h4>
 
 <div id="cont-detail">
   <div class="container">
-    <div class="section">
       <div class="row">
-        <div class="col 12">
-          <div class="section">
             {{#each pictureGallery}}
               <div class="col m4 s12">
                 <div class="card hoverable">
                   <div class="card-image">
-                    <img class="materialboxed" width="300" src="{{this.photoURL}}" alt="foto">
+                    <img class="materialboxed" src="{{this.photoURL}}">
                   </div>
-                  <div class="card-content">
-                    <span class="fechas"><u>{{this.createdAt}}</span></u>
-                    <h5>{{this.description}}</h5> 
+                  <div class="card-content forCards">
+                    <span class="card-title fechas"><u>{{this.createdAt}}</u></span>
+                    <h6>{{this.description}}</h6> 
                   </div>
                 </div>
               </div>         
             {{else}}
-            <p>Aquí podrás ver fotos de tu ahijado</p>
+              <h2>Aquí podrás ver fotos de tu ahijado</h2>
             {{/each}}
-          </div>
-        </div>
       </div>
-    </div>
   </div>
 </div>
   

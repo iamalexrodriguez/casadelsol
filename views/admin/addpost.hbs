@@ -1,38 +1,39 @@
 <section class="container">
-      <div class="container">
-        <h4>Agregar mensaje</h4>
-          <form action="/children/addpost/{{id}}" method="POST" enctype="multipart/form-data">
-            
+  <div class="center">
+    <h4>Agregar mensaje</h4>
+      <form action="/children/addpost/{{id}}" method="POST" enctype="multipart/form-data">
+               
+        {{!-- foto --}}
+        <div class="file-field input-field">
+          <div class="btn">
+            <i class="material-icons prefix">cloud_upload</i>
+            <label for="profilePic" style="color:white">Agrega foto:</label>
             <input type="file" name="photoURL" required="true">
-            {{!-- foto --}}
-            <div class="file-field input-field">
-              <div class="btn">
-                <i class="material-icons prefix">cloud_upload</i>
-                <label for="profilePic" style="color:white">Agrega foto:</label>
-                <input type="file" name="profilePic">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" name="profilePic">
-              </div>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="profilePic">
+          </div>
+        </div>
+            
+        {{!-- comentario --}}
+        <div class="row">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea2" class="materialize-textarea" data-length="120" name="description"></textarea>
+              <label for="textarea2">Comentario</label>
             </div>
+          </div>           
+        </div>
 
-            <input type="text" name="description" required="true" placeholder="Agrega una descripción">
-            {{!-- comentario --}}
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <textarea id="textarea2" class="materialize-textarea" type="text" name="description" required="true" data-length="120"></textarea>
-                    <label for="textarea2">Comentario</label>
-                  </div>
-                </div>
-              </form>
-            </div>
-            {{!-- boton --}}
-            <button class="btn waves-effect waves-light ">Agregar post<i class="material-icons right">add</i></button>
-          </form>
-      </div>
-          <h3>{{error}}</h3>
+        {{!-- boton --}}
+        <button class="btn waves-effect waves-light ">Agregar post
+          <i class="material-icons right">add</i>
+        </button>
+
+      <h3>{{error}}</h3>
+
+    </form>
+  </div>
 </section>
 
 <div class="fixed-action-btn">

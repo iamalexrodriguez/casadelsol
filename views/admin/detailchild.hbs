@@ -4,7 +4,7 @@
     <h2 class="header">{{name}}</h2>
     <div class="card horizontal">
       <div class="card-image">
-        <img width='300' src="{{profilePic}}" alt="Foto del niño">
+        <img class="materialboxed" width='300' src="{{profilePic}}" alt="Foto del niño">
       </div>
       <div class="card-stacked">
         <div class="card-content">
@@ -38,7 +38,7 @@
             <ul>
               <li><a href="/children/delete/{{this._id}}"   class="btn-floating btn tooltipped waves-effect waves-light red"  data-position="top" data-tooltip="Borrar">         <i class="material-icons">delete_forever</i></a></li>
               <li><a href="/children"                       class="btn-floating btn tooltipped waves-effect waves-light green"data-position="top" data-tooltip="Regresar">        <i class="material-icons">reply</i></a></li>
-              <li><a href="/children/sponsors/{{this._id}}" class="btn-floating btn tooltipped waves-effect waves-light blue" data-position="top" data-tooltip="Agregar padrino"> <i class="material-icons">group_add</i></a></li>
+              <li><a href="/children/sponsors/{{this._id}}" class="btn-floating btn tooltipped waves-effect waves-light blue" data-position="top" data-tooltip="Gestionar padrinos"> <i class="material-icons">group_add</i></a></li>
               <li><a href="/children/gallery/{{this._id}}"  class="btn-floating btn tooltipped waves-effect waves-light blue" data-position="top" data-tooltip="Gallería">        <i class="material-icons">photo_library</i></a></li>
             </ul>
           </div>
@@ -62,5 +62,12 @@
 <script>
   $(document).ready(function(){
     $('.tooltipped').tooltip();
+  });
+</script>
+
+{{!-- Zoom --}}
+<script>
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
   });
 </script>
