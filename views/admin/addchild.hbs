@@ -50,3 +50,36 @@
     </div>
   </div>
 </section>
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">reorder</i>
+  </a>
+  <ul>
+    <li><a href="/children"                       class="btn-floating btn tooltipped waves-effect waves-light green"data-position="top" data-tooltip="Regresar">        <i class="material-icons">reply</i></a></li>
+  </ul>
+</div>
+
+{{!-- acctionbutton --}}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left'
+    });
+  });
+</script>
+
+{{!-- tooltip --}}
+<script>
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+</script>
+
+{{!-- text --}}
+<script>
+  $(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  }); 
+</script>

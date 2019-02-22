@@ -7,6 +7,7 @@ exports.isRole = function(role){
 
 exports.isActive = function(active){
   return (req,res,next) =>{
+    console.log(active)
     if(req.user.status === active) next()
     else res.render('auth/forceconfirm')
   }

@@ -8,8 +8,9 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <h3>Info</h3>
-          <h4><p>Bio:</p></h4>
+          <h4>Información de: {{name}}</h4> 
+          <br>
+          <h5><p>Biografía:</p></h5>
           <p>{{bio}}</p>
           <h5><p>Intereses:</p></h5>
           <p>{{interests}}</p>
@@ -30,12 +31,36 @@
         </div>
         <div class="card-action">
           <a href="/children/addpost/{{this._id}}">Agregar mensaje</a>
-          <a href="/children/gallery/{{this._id}}">Visitar galería</a>
-          <a href="/children/sponsors/{{this._id}}" class="btn-floating  waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
-          <a href="/children/sponsors/{{this._id}}" class="btn-floating  waves-effect waves-light red"><i class="material-icons">group_add</i></a>
-          <a href="/children/delete/{{this._id}}" class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
+          <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red">
+              <i class="large material-icons">reorder</i>
+            </a>
+            <ul>
+              <li><a href="/children/delete/{{this._id}}"   class="btn-floating btn tooltipped waves-effect waves-light red"  data-position="top" data-tooltip="Borrar">         <i class="material-icons">delete_forever</i></a></li>
+              <li><a href="/children"                       class="btn-floating btn tooltipped waves-effect waves-light green"data-position="top" data-tooltip="Regresar">        <i class="material-icons">reply</i></a></li>
+              <li><a href="/children/sponsors/{{this._id}}" class="btn-floating btn tooltipped waves-effect waves-light blue" data-position="top" data-tooltip="Agregar padrino"> <i class="material-icons">group_add</i></a></li>
+              <li><a href="/children/gallery/{{this._id}}"  class="btn-floating btn tooltipped waves-effect waves-light blue" data-position="top" data-tooltip="Gallería">        <i class="material-icons">photo_library</i></a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+{{!-- acctionbutton --}}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left'
+    });
+  });
+</script>
+
+{{!-- tooltip --}}
+<script>
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+</script>

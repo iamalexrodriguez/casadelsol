@@ -46,11 +46,4 @@ div {
   align-items: center;
   flex-wrap: wrap; }
 
-.parallax-container .carousel a img {
-  background-size: 100% auto;
-  background-repeat: no-repeat; }
-
-.parallax-container {
-  height: 100%; }
-
 /*# sourceMappingURL=style.css.map */

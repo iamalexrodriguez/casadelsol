@@ -30,6 +30,8 @@ router.post("/addpost/:id", uploadCloud.single("photoURL"), (req, res, next) => 
   //const {name} = req.body.username
   //const {email} = req.body.email
  // console.log(email, name)
+ //Elaborar un array de correos
+ //populate sponsors
   console.log(id);
   Post.create({ ...req.body, photoURL: req.file.url })
     .then(doc => {
