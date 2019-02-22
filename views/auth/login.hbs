@@ -1,7 +1,10 @@
 <section class="center">
-    <h2>Login</h2>
+  <h2>Login</h2>
   <div class="container">
 
+    {{#if err}}
+    <p>{{err}}</p>
+    {{/if}}
 
     <form action="/auth/login" method="POST" id="form-container">
       {{!-- Username --}}
@@ -9,7 +12,7 @@
         <i class="material-icons prefix">account_circle</i>
         <label for="username">Email</label>
         <input id="username" type="text" name="email">
-        <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
+        <span class="helper-text" data-error="wrong" data-success="right">demo@ironhack.com</span>
       </div>
 
       {{!-- Password --}}
@@ -17,7 +20,7 @@
         <i class="material-icons prefix">vpn_key</i>
         <label for="password">Password</label>
         <input id="password" type="password" name="password">
-        <span class="helper-text" data-error="wrong" data-success="right">Your password</span>
+        <span class="helper-text" data-error="wrong" data-success="right">'123'</span>
       </div>
 
       {{!-- message --}}
@@ -30,16 +33,16 @@
       </button>
 
 
-{{#if message}}
+      {{#if message}}
       <p style="color: red;">{{message}}</p>
-  {{/if}}
+      {{/if}}
     </form>
 
   </div>
-    <p class="account-message">
-      ¿Todavía no tienes una cuenta?
-    </p>
-      <button class="btn waves-effect waves-light">
-        <a href="/auth/signup" style="color:white">Signup</a>
-      </button>
+  <p class="account-message">
+    ¿Todavía no tienes una cuenta?
+  </p>
+  <button class="btn waves-effect waves-light">
+    <a href="/auth/signup" style="color:white">Signup</a>
+  </button>
 </section>

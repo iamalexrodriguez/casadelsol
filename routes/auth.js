@@ -58,23 +58,23 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login", { message: req.flash("error") });
 });
 
-
-
-router.post(
-  "/login",
-  passport.authenticate("local"),
-  isActive("Active"),
-  (req, res, next) => {
-    if (req.user.role === "ADMIN") return res.redirect("/children");
-    const email = req.body.email;
-    User.findOne({ email: email })
-      .then(r => {
-        res.redirect("/profile");
-      })
-      .catch(e => next(e));
-  }
-);
-
+router.post("/login", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) return res.render("auth/login", { err: "este usuario no existe" });
+    if (!user)
+      return res.render("auth/login", { err: "usuario o contraseña mal" });
+    req.logIn(user, err => {
+      if (err) return next(err);
+      if (req.user.role === "ADMIN") return res.redirect("/children");
+      const email = req.body.email;
+      User.findOne({ email: email })
+        .then(r => {
+          res.redirect("/profile");
+        })
+        .catch(e => next(e));
+    });
+  })(req, res, next);
+});
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");

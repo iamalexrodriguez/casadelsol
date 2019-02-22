@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,86 +13,137 @@
 
 
   {{!-- jQuery --}}
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.js"
-    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-    crossorigin="anonymous">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous">
+    </script>
 
   {{!-- Fonts  --}}
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-   
+
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
 
-<div class="navbar-fixed">
-  <nav>  
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons blue-text text-darken-2">menu</i></a>
-    {{#if loggedUser}}
-    <div class="nav-wrapper teal white">
-      <img src="../images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/" class="blue-text text-darken-2">Home</a></li>
-        <li><a href="/profile" class="blue-text text-darken-2">Profile</a></li>
-        <li><a href="/auth/logout" class="blue-text text-darken-2">Logout</a></li>
-      </ul>
-    {{else}}
-    <div class="nav-wrapper teal white">
-      <img src="../images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/" class="blue-text text-darken-2">Home</a></li>
-        <li><a href="/auth/signup" class="blue-text text-darken-2">Signup</a></li>
-        <li><a href="/auth/login" class="blue-text text-darken-2">Login</a></li>
-      </ul>
-  {{/if}}
-    </div>
-  </nav>
-</div>
+   <div class="navbar-fixed">
+    <nav>
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i
+          class="material-icons blue-text text-darken-2">menu</i></a>
+
+          
+      {{#if loggedUser}}
+      <div class="nav-wrapper teal white">
+        <img src="/images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+          <li><a href="/profile" class="blue-text text-darken-2">Profile</a></li>
+          <li><a href="/auth/logout" class="blue-text text-darken-2">Logout</a></li>
+        </ul>
+
+        {{else}} 
+        {{#if isAdmin}}
+
+      <div class="nav-wrapper teal white">
+        <img src="/images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+          <li><a href="/auth/logout" class="blue-text text-darken-2">Logout</a></li>
+        </ul>
+
+        {{else}}
+        
+        <div class="nav-wrapper teal white">
+          <img src="/images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+            <li><a href="/auth/signup" class="blue-text text-darken-2">Signup</a></li>
+            <li><a href="/auth/login" class="blue-text text-darken-2">Login</a></li>
+          </ul>
+
+          {{/if}}{{/if}}
+        </div>
+    </nav>
+  </div>
+
+
+  {{!-- <div class="navbar-fixed">
+    <nav>
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i
+          class="material-icons blue-text text-darken-2">menu</i></a>
+      {{#if loggedUser}}
+      <div class="nav-wrapper teal white">
+        <img src="/images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+          <li><a href="/profile" class="blue-text text-darken-2">Profile</a></li>
+          <li><a href="/auth/logout" class="blue-text text-darken-2">Logout</a></li>
+        </ul>
+        {{else}} 
+        
+        <div class="nav-wrapper teal white">
+          <img src="/images/Logo-Casa-del-Sol.png" alt="Logos" href="/" class="brand-logo" style="width: 145px">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+            <li><a href="/auth/signup" class="blue-text text-darken-2">Signup</a></li>
+            <li><a href="/auth/login" class="blue-text text-darken-2">Login</a></li>
+          </ul>
+          {{/if}}
+        </div>
+    </nav>
+  </div> --}}
 
   <ul id="slide-out" class="sidenav">
     {{#if loggedUser}}
-    <li><div class="user-view">
-      <div class="background">
-        <img src="../images/fondo.jpg">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="/images/fondo.jpg">
+        </div>
+        <a href="#user"><img class="circle" src="/images/52598164_2612407005499150_8595355265929314304_o.jpg"></a>
+        <a href="#name"><span class="white-text name">{{user.username}}</span></a>
+        <a href="#email"><span class="white-text email">{{user.email}}</span></a>
       </div>
-      <a href="#user"><img class="circle" src="../images/52598164_2612407005499150_8595355265929314304_o.jpg"></a>
-      <a href="#name"><span class="white-text name">{{user.username}}</span></a>
-      <a href="#email"><span class="white-text email">{{user.email}}</span></a>
-    </div></li>
-      {{!-- opcions --}}
-      <li><a href="/" class="blue-text text-darken-2"><i class="material-icons">home</i>Home</a></li>
-      <li><a href="/profile" class="blue-text text-darken-2"><i class="material-icons">person_outline</i>Profile</a></li>
-      <li><a href="/auth/logout" class="blue-text text-darken-2"><i class="material-icons">call_received</i>Logout</a></li>
-      <li><div class="divider"></div></li>
-      <li><a class="subheader">Options</a></li>
-      <li><a class="waves-effect" href="#!">boton inutil</a></li>
+    </li>
+    {{!-- opcions --}}
+    <li><a href="/" class="blue-text text-darken-2"><i class="material-icons">home</i>Home</a></li>
+    <li><a href="/profile" class="blue-text text-darken-2"><i class="material-icons">person_outline</i>Profile</a></li>
+    <li><a href="/auth/logout" class="blue-text text-darken-2"><i class="material-icons">call_received</i>Logout</a>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Options</a></li>
+    <li><a class="waves-effect" href="#!">boton inutil</a></li>
     {{else}}
-    <li><div class="user-view">
-      <div class="background">
-        <img src="../images/fondo.jpg">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="/images/fondo.jpg">
+        </div>
+        <a href="#user"><img class="circle" src="/images/user.png"></a>
+        <a href="#name"><span class="white-text name">User</span></a>
+        <a href="#email"><span class="white-text email">example@email.com</span></a>
       </div>
-      <a href="#user"><img class="circle" src="../images/user.png"></a>
-      <a href="#name"><span class="white-text name">User</span></a>
-      <a href="#email"><span class="white-text email">example@email.com</span></a>
-    </div></li>
-      {{!-- options --}}
-      <li><a href="/" class="blue-text text-darken-2"><i class="material-icons">home</i>Home</a></li>
-      <li><a href="/auth/signup" class="blue-text text-darken-2"><i class="material-icons">border_color</i>Signup</a></li>
-      <li><a href="/auth/login" class="blue-text text-darken-2"><i class="material-icons">fingerprint</i>Login</a></li>
-      <li><div class="divider"></div></li>
-      <li><a class="subheader">Options</a></li>
-      <li><a class="waves-effect" href="#!">boton inutil</a></li>
+    </li>
+    {{!-- options --}}
+    <li><a href="/" class="blue-text text-darken-2"><i class="material-icons">home</i>Home</a></li>
+    <li><a href="/auth/signup" class="blue-text text-darken-2"><i class="material-icons">border_color</i>Signup</a></li>
+    <li><a href="/auth/login" class="blue-text text-darken-2"><i class="material-icons">fingerprint</i>Login</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Options</a></li>
+    <li><a class="waves-effect" href="#!">boton inutil</a></li>
     {{/if}}
   </ul>
-        
 
 
-<div class="fixed-action-btn">
-  <a class="btn-floating btn-large blue sidenav-trigger" href="#" data-target="slide-out">
-    <i class="material-icons">menu</i>
-  </a>
-</div>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large blue sidenav-trigger" href="#" data-target="slide-out">
+      <i class="material-icons">menu</i>
+    </a>
+  </div>
 
 
   {{{body}}}
@@ -100,23 +152,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
+
 </html>
 
 
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.collapsible').collapsible();
   });
 </script>
 
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.sidenav').sidenav();
   });
 </script>
 
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.fixed-action-btn').floatingActionButton();
   });
 </script>

@@ -1,10 +1,11 @@
 <section class="center">
   <div class="containet">
-    <h3>Agrega padrinos a: {{child.name}}</h3>
+    <h3>Agrega padrinos a {{child.name}}</h3>
 
 <h1>{{error}}</h1>
 
-<form id="{{child._id}}" action="/children/addsponsor/{{child._id}}" method="POST">
+
+<form id="{{child._id}}" action="/children/addsponsor/{{child._id}}" method="POST" >
   <select size="{{users.length}}" name="gestionpadrinos" style="display:inherit;height:200px" multiple="yes">
     {{#each users}}
     <option id="{{this._id}}" value="{{this._id}}">{{this.username}}</option>

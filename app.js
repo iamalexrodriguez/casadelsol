@@ -15,6 +15,7 @@ const flash = require("connect-flash");
 const passport = require("./passport/localStrategy");
 
 const { isRole } = require("./helpers/middlewares");
+const { isActive } = require("./helpers/middlewares");
 
 //hbs helpers
 // hbs.registerHelper("checkSelected", function(id, childId) {
@@ -122,9 +123,10 @@ const profile = require("./routes/profile");
 const children = require("./routes/children");
 const index = require("./routes/index");
 const auth = require("./routes/auth");
-app.use("/profile", isLogged, isAdmin, isRole("SPONSOR"), profile);
-app.use("/children", isLogged, isAdmin, isRole("ADMIN"), children);
+// poner is active
+app.use('/profile', isLogged, isRole('SPONSOR'), isActive('Active'), profile)
+app.use("/children", isLogged, isRole('ADMIN'), children);
 app.use("/auth", isLogged, auth);
-app.use("/", isLogged, index);
+app.use("/", index);
 
 module.exports = app;

@@ -45,9 +45,9 @@
 <script src="https://unpkg.com/moment"></script>
 <script>
   let fechas = document.getElementsByClassName('fechas')
-  moment.locale('es')
+  moment.locale('fr')
   for (let i = 0; i < fechas.length; i++) {
-    fechas[i].innerText = moment().locale('es').format('L')
+    fechas[i].innerText = moment().locale('fr').format('L')
   }
 </script>
 
